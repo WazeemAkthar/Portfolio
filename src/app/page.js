@@ -2,7 +2,7 @@ import './styles/home.css';
 
 export default function Home() {
   return (
-    <main>
+    <main className="hero-background">
       <h1>Welcome to My Portfolio</h1>
       <p>
         Hi, I’m a front-end web developer and copywriter. Explore my skills and projects!

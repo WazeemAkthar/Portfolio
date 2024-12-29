@@ -15,6 +15,8 @@ export default function WebDevelopment() {
           <li>React.js, Next.js</li>
           <li>UI/UX design principles</li>
         </ul>
+
+        <h2>Think You Need a Full Redesign? Maybe All You Need Is a Fresh Perspective</h2>
       </main>
       <section>
         <Card
