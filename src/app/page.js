@@ -9,7 +9,6 @@ export default function Home() {
       </p>
 
       <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
-        
        
       </div>
     </main>
