@@ -12,8 +12,9 @@ import {
   Layout,
   Database,
   BookText,
-  Figma
+  Figma,
 } from "lucide-react";
+import RadarChart from "./components/RadarChart";
 
 // Animation variants
 const fadeIn = {
@@ -35,9 +36,39 @@ const item = {
   show: { opacity: 1, x: 0 },
 };
 
-const links = {
+const FrontendskillsData = [
+  { name: "React", level: 90 },
+  { name: "Node.js", level: 85 },
+  { name: "TypeScript", level: 75 },
+  { name: "Python", level: 80 },
+  { name: "UI Design", level: 70 },
+];
 
-}
+const copywritingSkills = [
+  { name: "Headline Writing", level: 90 },
+  { name: "SEO Copywriting", level: 80 },
+  { name: "Persuasive Writing", level: 85 },
+  { name: "Email Marketing", level: 75 },
+  { name: "Social Media Copy", level: 80 },
+  { name: "Storytelling", level: 85 },
+  { name: "Ad Copywriting", level: 70 },
+  { name: "Brand Voice Development", level: 78 },
+  { name: "Content Strategy", level: 82 },
+  { name: "Proofreading & Editing", level: 88 },
+];
+
+const uiUxSkills = [
+  { name: "Wireframing", level: 85 },
+  { name: "Prototyping", level: 80 },
+  { name: "User Research", level: 75 },
+  { name: "Interaction Design", level: 90 },
+  { name: "Visual Design", level: 85 },
+  { name: "Usability Testing", level: 80 },
+  { name: "Design Systems", level: 70 },
+  { name: "Typography", level: 80 },
+  { name: "Color Theory", level: 85 },
+  { name: "Responsive Design", level: 90 },
+];
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
@@ -78,6 +109,24 @@ export default function Home() {
       level: 85,
     },
     { name: "Copywriting", icon: <BookText className="w-6 h-6" />, level: 80 },
+  ];
+
+  const links = [
+    {
+      name: "Github",
+      icon: <Github className="w-6 h-6" />,
+      url: "https://github.com/WazeemAkthar",
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="w-6 h-6" />,
+      url: "https://www.linkedin.com/in/wazeem-akthar-03738128a/",
+    },
+    {
+      name: "Email",
+      icon: <Mail className="w-6 h-6" />,
+      url: "mailto:aktharwazeem@gmail.com",
+    },
   ];
 
   return (
@@ -128,13 +177,14 @@ export default function Home() {
             animate="show"
           >
             {[
-              <Github key="github" />,
+              <Github key="github" href="https://github.com/WazeemAkthar" />,
               <Linkedin key="linkedin" />,
               <Mail key="mail" />,
             ].map((icon, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={links[index].url}
+                target="_blank"
                 className="p-2 hover:text-blue-400 transition-colors"
                 variants={item}
                 whileHover={{ scale: 1.2 }}
@@ -146,6 +196,27 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* Skills Radar Charts */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+        <motion.div>
+          <div className="p-4">
+            <RadarChart skills={FrontendskillsData} theme={theme} />
+          </div>
+        </motion.div>
+
+        <motion.div>
+          <div className="p-4">
+            <RadarChart skills={copywritingSkills} theme={theme} />
+          </div>
+        </motion.div>
+
+        <motion.div>
+          <div className="p-4">
+            <RadarChart skills={uiUxSkills} theme={theme} />
+          </div>
+        </motion.div>
+      </div>
 
       {/* Skills Section */}
       <div className="py-20 px-4 bg-gray-800">
