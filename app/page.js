@@ -11,6 +11,8 @@ import {
   Code,
   Layout,
   Database,
+  BookText,
+  Figma
 } from "lucide-react";
 
 // Animation variants
@@ -72,10 +74,10 @@ export default function Home() {
     },
     {
       name: "UI/UX Design",
-      icon: <Database className="w-6 h-6" />,
+      icon: <Figma className="w-6 h-6" />,
       level: 85,
     },
-    { name: "Copywriting", icon: <Code className="w-6 h-6" />, level: 80 },
+    { name: "Copywriting", icon: <BookText className="w-6 h-6" />, level: 80 },
   ];
 
   return (
