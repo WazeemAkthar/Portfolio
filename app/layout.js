@@ -1,3 +1,5 @@
+import './globals.css'
+
 export const metadata = {
   title: 'Developer Portfolio',
   description: 'A modern developer portfolio built with Next.js',
